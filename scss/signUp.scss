@@ -1,0 +1,214 @@
+@mixin  mac{
+    @media(max-width:1350px){
+        @content;
+    }
+}
+@mixin  pad{
+    @media(max-width:900px){
+        @content;
+    }
+}
+@mixin  mobile{
+    @media(max-width:600px){
+        @content;
+    }
+}
+.s1{
+    background-color: #E96A50bb;
+}
+.s2{
+    background-color: #E96A50bb;
+    padding: 200px 0;
+    .s2Box{
+        position: relative;
+
+        .imgBox1{
+            top: -200px;
+            left: 50px;
+            @include pad(){
+                top: -100px;
+                left: 0;
+            }
+        }
+        .imgBox2{
+            top: -100px;
+            right: 50px;
+            @include pad(){
+                right: 0;
+                top: 400px;
+            }
+        }
+        .signUpBox{
+            width: 1000px;
+            padding: 80px 120px;
+            background-color: #F2EDDC;
+            border-radius: 15px;
+            margin: 0 auto;
+            position: relative;
+            @include mac(){
+                width: 90vw;
+            }
+            @include pad(){
+                padding: 80px 40px;
+            }
+
+            .mainTitle{
+                width: fit-content;
+                margin: 0 auto 60px auto;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    border-bottom: 1px solid #000;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    width: 80%;
+                    border-bottom: 1px solid #000;
+                }
+            }
+            form{
+                .block{
+                    margin-bottom: 30px;
+                    .item{
+                        margin-bottom: 7px;
+                    }
+                    .fb-id{
+                        height: 30px;
+                        border-radius: 5px;
+                        padding: 0 10px;
+                        font-size: 14px;
+                        line-height: 30px;
+                        background-color: #fff;
+                        color: #ccc;
+                    }
+                    .fileBox{
+                        @include pad(){
+                            flex-wrap: wrap;
+                        }
+                        #file-input{
+                            position: absolute;
+                            opacity: 0;
+                        }
+                        /* 自訂按鈕的樣式 */
+                        .custom-file-upload {
+                            display: inline-block;
+                            cursor: pointer;
+                            background-color: #0DBFFF;
+                            color: #fff;
+                            border-radius: 5px;
+                            font-size: 16px;
+                            height: 30px;
+                            line-height: 30px;
+                            width: 19%;
+                            text-align: center;
+                            white-space: nowrap;
+                            
+                            @include pad(){
+                                width: 100%;
+                                margin-top: 5px;
+                            }
+                        }
+                        /* 顯示上傳內容的容器樣式 */
+                        #uploaded-files {
+                            height: 30px;
+                            width: 80%;
+                            line-height: 30px;
+                            border-radius: 5px;
+                            background-color: #fff;
+                            font-size: 16px;
+                            padding: 0 5px;
+                            @include pad(){
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .text-S{
+                        font-size: 14px;
+                        color: #CF0000;
+                    }
+                    input[type="text"]{
+                        border: unset;
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 30px;
+                        padding: 0 5px;
+                        font-size: 16px;
+                        line-height: 30px;
+                    }
+                }
+                .text{
+                    width: fit-content;
+                    margin: 80px auto 30px auto;
+                    color: #E96A50;
+                    padding-left: 30px;
+                    position: relative;
+                    &::before{
+                        content: url(../img/Iconawesome-exclamation-circle.png);
+                        position: absolute;
+                        top: 20px;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+                .buttonBox{
+                    justify-content: center;
+                    @include pad(){
+                        flex-wrap: wrap;
+                    }
+                    .button{
+                        margin: 0 10px;
+                        @include pad(){
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+.popupBg{
+    .popup{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 700px;
+        padding: 70px 50px;
+        border-radius: 15px;
+        background-color: #fff;
+        text-align: center;
+        @include pad(){
+            width: 80vw;
+            padding: 40px 20px;
+        }
+        .popupBox{
+            .secondTitle{
+                margin-bottom: 30px;
+            }
+            .text{
+                margin-bottom: 50px;
+            }
+            .button{
+                margin: 0 auto;
+            }
+        }
+    }
+    .popup1{
+        .secondTitle{
+            color: #0DBFFF;
+        }
+    }
+    .popup2,.popup3{
+        .secondTitle{
+            color: #E96A50;
+        }
+    }
+}

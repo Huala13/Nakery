@@ -1,0 +1,229 @@
+@mixin  mac{
+    @media(max-width:1350px){
+        @content;
+    }
+}
+@mixin  pad{
+    @media(max-width:900px){
+        @content;
+    }
+}
+@mixin  mobile{
+    @media(max-width:600px){
+        @content;
+    }
+}
+.s1{
+    background-color: #0DBFFFbb;
+}
+.s2{
+    background-color: #0DBFFFbb;
+    background-image: url(../img/img-5.png);
+    padding: 150px 0;
+    .s2Box{
+        .contentBox{
+            width: 1360px;
+            margin: 0 auto;
+            border-radius: 15px;
+            padding: 120px 30px;
+            background-color: #fff;
+            @include mac{
+                width: 90vw;
+            }
+
+            .mainTitle{
+                width: fit-content;
+                margin: 0 auto 60px auto;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    border-bottom: 1px solid #000;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    width: 80%;
+                    border-bottom: 1px solid #000;
+                }
+            }
+            hr{
+                width: 90%;
+                margin: 100px auto 100px auto;
+            }
+            .searchBar{
+                width: 50%;
+                margin: 0 auto 100px auto;
+                @include mac(){
+                    width: 100%;
+                }
+            }
+            .gridBox{
+                margin-top: 100px;
+                font-size: 16px;
+                display: grid;
+                gap: 60px 28px;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                @include mac(){
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+                    justify-content: space-around;
+                }
+                .gridItem{
+                    border: 1px solid #000;
+                    border-radius: 15px;
+                    width: 300px;
+                    padding: 25px 20px;
+                    position: relative;
+                    display: grid;
+                    .topTitle{
+                        font-size: 24px;
+                        top: -17px;
+                        left: 15px;
+                        background-color: #fff;
+                        padding: 0 5px;
+                    }
+                    .NumBox{
+                        margin-bottom: 10px;
+                        .NumData{
+                            font-size: 20px;
+                            color: #CF0000;
+                        }
+                    }
+                    .imgBox{
+                        position: unset;
+                        width: 258px;
+                        margin-bottom: 10px;
+                    }
+                    .nameBox{
+                        margin-bottom: 10px;
+                    }
+                    .buttonBox{
+                        align-self: end;
+                        margin-top: 25px;
+                        .button{
+                            width: 100%;
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+.popupBg{
+    .popup{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 550px;
+        padding: 70px 50px;
+        border-radius: 15px;
+        background-color: #fff;
+        text-align: center;
+        .popupBox{
+            .secondTitle{
+                margin-bottom: 50px;
+            }
+            .button{
+                margin: 0 auto;
+            }
+        }
+    }
+    .popup1{
+        .secondTitle{
+            color: #E96A50;
+        }
+    }
+    .popup2{
+        .secondTitle{
+            color: #0DBFFF;
+        }
+    }
+    .popup3{
+        text-align: unset;
+        width: 800px;
+        padding: 80px 120px;
+        background-color: #F2EDDC;
+
+        .mainTitle{
+            width: fit-content;
+            margin: 0 auto 60px auto;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                border-bottom: 1px solid #000;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translate(-50%);
+                width: 80%;
+                border-bottom: 1px solid #000;
+            }
+        }
+        input{
+            width: 100%;
+            margin: 5px 0  20px 0;
+        }
+        .robot{
+            margin: 50px 0 30px 0;
+        }
+    }
+    .popup4{
+        background-color: #fff;
+        width: 1000px;
+        height: 80vh;
+        padding: 70px 50px;
+        text-align: unset;
+        
+        .popScroll{
+            overflow-y: scroll;
+            height: calc(80vh - 140px);
+            padding: 0px 20px 1px 0;
+    
+            &::-webkit-scrollbar{
+                width: 10px;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: #eee;
+                border-radius: 10px;
+                margin-right: 30px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: #CBCCCC;
+                border-radius: 10px;
+            }
+            .popupBox{
+                border: 1px solid #000;
+                border-radius: 15px;
+                padding: 50px 25px;
+                .block{
+                    margin-top: 30px;
+                    .secondTitle{
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                    }
+                    ol{
+                        margin: 0;
+                        li{
+                            margin: 20px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
